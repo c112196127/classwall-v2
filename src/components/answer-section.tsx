@@ -41,12 +41,12 @@ export function AnswerSection({ questionId }: Props) {
       {/* 回答列表 */}
       <div className="flex flex-col gap-2">
         {loading ? (
-          <p className="text-xs text-muted-foreground">載入回答中…</p>
+          <p className="text-xs text-muted-foreground">載入備註中…</p>
         ) : error ? (
           <p className="text-xs text-destructive">讀取失敗：{error}</p>
         ) : answers.length === 0 ? (
           <p className="text-xs italic text-muted-foreground/80">
-            還沒有人回答，你來當第一個 ✨
+            還沒有人補充備註，你來當第一個 ✨
           </p>
         ) : (
           <AnimatePresence initial={false}>
@@ -82,7 +82,7 @@ export function AnswerSection({ questionId }: Props) {
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="寫下你的回答…"
+          placeholder="補充口味、甜度或取餐提醒…"
           maxLength={MAX}
           rows={2}
           disabled={submitting}
@@ -111,11 +111,13 @@ export function AnswerSection({ questionId }: Props) {
               "disabled:cursor-not-allowed disabled:opacity-50"
             )}
           >
-            {submitting ? "送出中…" : "送出回答"}
+            {submitting ? "送出中…" : "送出備註"}
           </motion.button>
         </div>
         {submitError ? (
-          <p className="text-xs text-destructive">送出失敗：{submitError}</p>
+          <p className="text-xs text-destructive">
+            送出備註失敗：{submitError}
+          </p>
         ) : null}
       </form>
     </div>
