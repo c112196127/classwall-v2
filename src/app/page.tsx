@@ -62,7 +62,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="inline-block h-px w-6 bg-foreground/30" />
-              <span>今日揪團 · 2026</span>
+              <span>AI 教學 · 揪團 · 2026</span>
             </div>
             <ThemeToggle />
           </motion.div>
@@ -101,7 +101,7 @@ export default function Home() {
             className="flex flex-wrap items-center gap-2 pt-1"
           >
             <StatsPill label="品項" value={questions.length} />
-            <StatsPill label="總杯數" value={totalLikes} accent />
+            <StatsPill label="總跟單" value={totalLikes} accent />
             <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/60 backdrop-blur-md px-3 py-1.5 text-[12px]">
               <span className="live-dot" aria-hidden />
               <span className="text-muted-foreground">即時連線中</span>
@@ -212,7 +212,7 @@ export default function Home() {
           transition={{ delay: 0.5 }}
           className="pt-8 pb-4 text-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70"
         >
-          powered by Next.js · Supabase · Motion
+          built with Next.js · Supabase · Motion
         </motion.footer>
       </main>
     </>
