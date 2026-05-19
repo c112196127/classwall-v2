@@ -68,7 +68,7 @@ export function useAnswers(questionId: string) {
   const addAnswer = useCallback(
     async (content: string) => {
       const trimmed = content.trim();
-      if (!trimmed) return { error: "回答不能為空" };
+      if (!trimmed) return { error: "備註不能為空" };
 
       const { error: insertError } = await supabase
         .from("answers")

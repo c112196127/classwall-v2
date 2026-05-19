@@ -62,7 +62,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               <span className="inline-block h-px w-6 bg-foreground/30" />
-              <span>AI × 教學 · 2026</span>
+              <span>今日揪團 · 2026</span>
             </div>
             <ThemeToggle />
           </motion.div>
@@ -74,7 +74,7 @@ export default function Home() {
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl"
           >
-            <span className="italic">Class</span>
+            <span className="italic">Drink</span>
             <span>Wall</span>
             <span className="text-primary">.</span>
           </motion.h1>
@@ -86,11 +86,11 @@ export default function Home() {
             }}
             className="max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-base"
           >
-            一道屬於這間教室的匿名問答牆——
+            一個屬於這間教室的匿名飲料揪團牆——
             <span className="font-display italic text-foreground">
-              想問什麼，就大方問
+              想喝什麼，就直接喊單
             </span>
-            。 即時同步、按讚衝榜、誰都看得到。
+            。 即時同步、跟單衝榜、全班都看得到。
           </motion.p>
 
           <motion.div
@@ -100,8 +100,8 @@ export default function Home() {
             }}
             className="flex flex-wrap items-center gap-2 pt-1"
           >
-            <StatsPill label="問題" value={questions.length} />
-            <StatsPill label="總 +1" value={totalLikes} accent />
+            <StatsPill label="品項" value={questions.length} />
+            <StatsPill label="總杯數" value={totalLikes} accent />
             <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/60 backdrop-blur-md px-3 py-1.5 text-[12px]">
               <span className="live-dot" aria-hidden />
               <span className="text-muted-foreground">即時連線中</span>
@@ -109,13 +109,13 @@ export default function Home() {
           </motion.div>
         </motion.header>
 
-        {/* ============ 發問區 ============ */}
-        <section aria-label="發問區">
+        {/* ============ 點餐區 ============ */}
+        <section aria-label="點餐區">
           <QuestionForm />
         </section>
 
-        {/* ============ 問題列表 ============ */}
-        <section aria-label="問題列表" className="flex flex-col gap-3">
+        {/* ============ 訂單列表 ============ */}
+        <section aria-label="訂單列表" className="flex flex-col gap-3">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -123,10 +123,10 @@ export default function Home() {
             className="flex items-baseline justify-between gap-3"
           >
             <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
-              牆上的問題
+              目前訂單
             </h2>
             <span className="text-[11px] uppercase tracking-wider text-muted-foreground">
-              依讚數排序 · 每頁 {PAGE_SIZE} 題
+              依跟單數排序 · 每頁 {PAGE_SIZE} 筆
             </span>
           </motion.div>
 
@@ -143,10 +143,10 @@ export default function Home() {
               className="rounded-2xl border border-dashed border-border/70 bg-card/40 py-16 text-center"
             >
               <p className="font-display text-2xl italic text-muted-foreground">
-                還沒有人發問
+                還沒有人點飲料
               </p>
               <p className="mt-2 text-sm text-muted-foreground/80">
-                你來當第一個 ✨
+                你來開第一單 ✨
               </p>
             </motion.div>
           ) : (
@@ -191,7 +191,7 @@ export default function Home() {
                       </>
                     ) : (
                       <>
-                        <span>載入更多</span>
+                        <span>載入更多訂單</span>
                         <span aria-hidden>↓</span>
                       </>
                     )}
@@ -212,7 +212,7 @@ export default function Home() {
           transition={{ delay: 0.5 }}
           className="pt-8 pb-4 text-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70"
         >
-          built with Next.js · Supabase · Motion
+          powered by Next.js · Supabase · Motion
         </motion.footer>
       </main>
     </>

@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 
 const MAX = 500;
-const CHIPS = ["匿名", "全班可見", "即時同步"];
+const CHIPS = ["匿名點餐", "全班可見", "即時跟單"];
 
 export function QuestionForm() {
   const [content, setContent] = useState("");
@@ -74,7 +74,7 @@ export function QuestionForm() {
       <Textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder="想問什麼？匿名發問，全班都看得到..."
+        placeholder="今天想喝什麼？例如：微糖少冰珍奶..."
         maxLength={MAX}
         rows={3}
         disabled={submitting}
@@ -159,7 +159,7 @@ export function QuestionForm() {
               </>
             ) : (
               <>
-                <span>送出問題</span>
+                <span>送出訂單</span>
                 <motion.span
                   aria-hidden
                   className="inline-block"
@@ -181,7 +181,7 @@ export function QuestionForm() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-3 text-sm text-destructive"
         >
-          送出失敗：{error}
+          送出訂單失敗：{error}
         </motion.p>
       ) : null}
     </motion.form>
