@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "DrinkWall · 匿名訂飲料牆",
+  title: "ClassWall · 匿名訂飲料牆",
   description:
     "5 小時 AI 程式開發實戰：用 Next.js + Supabase + Copilot 打造的匿名訂飲料系統。",
 };

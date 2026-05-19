@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 
 const MAX = 500;
-const CHIPS = ["匿名點餐", "全班可見", "即時跟單"];
+const CHIPS = ["匿名點餐", "全班可見", "即時同步"];
 
 export function QuestionForm() {
   const [content, setContent] = useState("");

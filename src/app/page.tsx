@@ -74,7 +74,7 @@ export default function Home() {
             }}
             className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl"
           >
-            <span className="italic">Drink</span>
+            <span className="italic">Class</span>
             <span>Wall</span>
             <span className="text-primary">.</span>
           </motion.h1>
