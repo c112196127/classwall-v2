@@ -12,7 +12,7 @@ type Props = {
 
 const MAX = 500;
 
-// 展開後的回答區塊：上面是回答列表、下面是輸入框
+// 展開後的回應區塊：上面是回應列表、下面是輸入框
 export function AnswerSection({ questionId }: Props) {
   const { answers, loading, error, addAnswer } = useAnswers(questionId);
   const [content, setContent] = useState("");
@@ -38,15 +38,15 @@ export function AnswerSection({ questionId }: Props) {
 
   return (
     <div className="mt-4 border-t border-border/60 pt-4">
-      {/* 回答列表 */}
+      {/* 回應列表 */}
       <div className="flex flex-col gap-2">
         {loading ? (
-          <p className="text-xs text-muted-foreground">載入回答中…</p>
+          <p className="text-xs text-muted-foreground">載入回應中…</p>
         ) : error ? (
           <p className="text-xs text-destructive">讀取失敗：{error}</p>
         ) : answers.length === 0 ? (
           <p className="text-xs italic text-muted-foreground/80">
-            還沒有人回答，你來當第一個 ✨
+            還沒有人回應，你來當第一個 ✨
           </p>
         ) : (
           <AnimatePresence initial={false}>
@@ -77,12 +77,12 @@ export function AnswerSection({ questionId }: Props) {
         )}
       </div>
 
-      {/* 回答輸入框 */}
+      {/* 回應輸入框 */}
       <form onSubmit={handleSubmit} className="mt-3 flex flex-col gap-2">
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="寫下你的回答…"
+          placeholder="寫下你的回應…"
           maxLength={MAX}
           rows={2}
           disabled={submitting}
@@ -111,7 +111,7 @@ export function AnswerSection({ questionId }: Props) {
               "disabled:cursor-not-allowed disabled:opacity-50"
             )}
           >
-            {submitting ? "送出中…" : "送出回答"}
+            {submitting ? "送出中…" : "送出回應"}
           </motion.button>
         </div>
         {submitError ? (
