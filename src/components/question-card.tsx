@@ -171,7 +171,7 @@ function QuestionCardImpl({ question }: Props) {
               )}
             >
               <span aria-hidden>💬</span>
-              <span>{expanded ? "收起" : "回答"}</span>
+              <span>{expanded ? "收起" : "回應"}</span>
               <motion.span
                 aria-hidden
                 animate={{ rotate: expanded ? 180 : 0 }}
@@ -237,7 +237,7 @@ function QuestionCardImpl({ question }: Props) {
             >
               <span aria-hidden>{alreadyLiked ? "✓" : "👍"}</span>
               <span>
-                {alreadyLiked ? "已 +1" : "我也想問"} ·{" "}
+                {alreadyLiked ? "已 +1" : "我也要聊"} ·{" "}
                 <motion.span
                   key={question.likes}
                   initial={{ y: -6, opacity: 0 }}
